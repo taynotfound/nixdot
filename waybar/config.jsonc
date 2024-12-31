@@ -14,7 +14,9 @@
     // If height property would be not present, it'd be calculated dynamically
     "height": 30,
     "modules-left": [
-       "custom/apps"
+       "custom/apps",
+       "custom/spacer",
+       "custom/weather",
     ],
     "modules-center": [
       "hyprland/window"
@@ -34,8 +36,13 @@
     // -------------------------------------------------------------------------
      "custom/apps": { 
        "format": " ❄️",
-       "on-click": "rofi -show drun"
-     },
+       "on-click": "rofi -show drun"     },
+    "custom/weather": {
+        "format": "{}",
+	"exec": "curl 'wttr.in/Goettingen?format=1' --max-time 1",
+	"interval": 1800,
+	"on-click": "firefox 'https://www.meteoblue.com/en/weather/week/ljubljana_slovenia_3196359'"
+    },
     "custom/media": {
     "format": "<b>   {icon}{} </b>",
     "return-type": "json",
@@ -96,5 +103,8 @@
     },
     "custom/blank": {
       "format": "   "
+    },
+    "custom/spacer": {
+      "format": " ┃ "
     }
 }
