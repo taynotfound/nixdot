@@ -17,9 +17,11 @@
        "custom/apps",
        "custom/spacer",
        "custom/weather",
+       "custom/spacer",
+       "hyprland/window"
     ],
     "modules-center": [
-      "hyprland/window"
+      "hyprland/workspaces",
     ],
     "modules-right": [
         "custom/media",
@@ -53,12 +55,12 @@
         "Paused": " ",
     },
     "max-length":70,
-    "exec": "playerctl -a metadata --format '{\"text\": \"{{playerName}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "exec": "playerctl -a metadata --format '{\"text\": \"{{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
     "on-click": "playerctl play-pause",
 },
 "custom/nvidia": {
     "exec": "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,nounits,noheader | sed 's/\\([0-9]\\+\\), \\([0-9]\\+\\)/\\1% 🌡️\\2°C/g'",
-    "format": "    {} 🖥️",
+    "format": " 🎥 {} ",
     "interval": 2
 },
 
@@ -69,7 +71,7 @@
     },
     "cpu": {
         "interval": 5,
-        "format": "  {usage}% ({load})", // Icon: microchip
+        "format": "  {usage}%", // Icon: microchip
         "states": {
             "warning": 70,
             "critical": 90
@@ -129,5 +131,29 @@
     "on-click-right": "sleep 0.1; swaync-client -d -sw",
     "escape": true
 },
-
+"hyprland/workspaces": {
+    "disable-scroll": false,
+    "active-only": false,
+    "sort-by-number": true,
+    "all-outputs": true,
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "format": "{icon}",
+    "format-icons": {
+        "1": "I",
+		"2": "II",
+		"3": "III",
+		"4": "IV",
+		"5": "V",
+                "6": "VI",
+		"7": "VII",
+		"8": "VIII",
+		"9": "IX",
+		"10": "X",
+        "urgent": "󱎘",
+	"active": "󰨕󰨕󰨕",
+        "default": "󰎔",
+        },
+      },
 }
