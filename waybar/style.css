@@ -121,9 +121,35 @@
 #custom-spotify {
     color: rgb(102, 220, 105);
 }
+#custom-spacer {
+  color: #B0B0B0;
+}
+
+#window {
+  color: #A8E8FF; 
+}
+
+#hyprland-workspaces {
+  color: #87CEFA;
+}
+
+#hyprland-workspaces.active {
+  color: #6E6E9C
+}
+
+#hyprland-workspaces:hover {
+  color: #FFB6C1;
+}
+#custom-media {
+  color: #ADFF2F;
+}
+
+#custom-nvidia {
+  color: #76B900
+}
 
 #temperature {
-    /* No styles */
+  color: #FFA500;
 }
 
 #temperature.critical {
@@ -131,11 +157,35 @@
 }
 
 #tray {
-    /* No styles */
+    color: #D3D3D3;
+}
+
+#date {
+  color: #E6E6FA;
+}
+
+#time {
+  color: #FFFFFF;
+}
+
+#custom-notifications {
+  color: #B0B0B0
+}
+
+#custom-notifications.notification {
+  color: #FF7373;
+}
+
+#custom-power {
+  color: #32CD32;
 }
 
 #window {
     font-weight: bold;
+}
+
+#custom-weather {
+ color: #FFEA70; 
 }
 
 #workspaces button {

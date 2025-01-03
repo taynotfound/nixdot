@@ -156,4 +156,7 @@
         "default": "󰎔",
         },
       },
+"hyprland/window": {
+    "separate-outputs": true
+},
 }
